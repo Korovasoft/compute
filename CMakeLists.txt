@@ -86,6 +86,14 @@ if(${BOOST_COMPUTE_BUILD_EXAMPLES})
   add_subdirectory(example)
 endif()
 
+# Create interface library target:
+add_library(Boost.Compute INTERFACE)
+target_include_directories(Boost.Compute INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_include_directories(Boost.Compute INTERFACE ${Boost_INCLUDE_DIR})
+target_include_directories(Boost.Compute INTERFACE ${OpenCL_INCLUDE_DIR})
+target_link_libraries(Boost.Compute INTERFACE ${Boost_LIBRARIES})
+target_link_libraries(Boost.Compute INTERFACE ${OpenCL_LIBRARIES})
+
 # configure cmake config file
 configure_file(
   cmake/BoostComputeConfig.cmake.in
