@@ -90,9 +90,9 @@ endif()
 add_library(Boost.Compute INTERFACE)
 target_include_directories(Boost.Compute INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_include_directories(Boost.Compute INTERFACE ${Boost_INCLUDE_DIR})
-target_include_directories(Boost.Compute INTERFACE ${OpenCL_INCLUDE_DIR})
+target_include_directories(Boost.Compute INTERFACE ${OPENCL_INCLUDE_DIR})
 target_link_libraries(Boost.Compute INTERFACE ${Boost_LIBRARIES})
-target_link_libraries(Boost.Compute INTERFACE ${OpenCL_LIBRARIES})
+target_link_libraries(Boost.Compute INTERFACE ${OPENCL_LIBRARIES})
 
 # configure cmake config file
 configure_file(
